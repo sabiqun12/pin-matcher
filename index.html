@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input id="pinResult"class="form-control" type="text" value="">
+                    <button onclick="pinGenerate()" class="generate-btn">Generate Pin</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-section half-width">
+                    <input class="form-control" id ="inputNum" type="text" value="">
+                    <div class="numbers">
+                        <div class="calc-body">
+                            <div class="calc-button-row">
+                              <div class="button" id="seven">7</div>
+                              <div class="button" id="eight">8</div>
+                              <div class="button" id="nine">9</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div class="button" id="four">4</div>
+                              <div class="button" id="five">5</div>
+                              <div class="button" id="six">6</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div class="button" id="one">1</div>
+                              <div class="button" id="two">2</div>
+                              <div class="button" id="three">3</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div class="button" id="minus">&lt;</div>
+                                <div class="button" id="zero">0</div>
+                                <div class="button" id="remove">C</div>
+                            </div>
+                            <div>
+                                <button onclick="submitBtn()" type="submit" class="submit-btn">Submit</button>
+                                <p class="action-left">3 try left</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notify-section" id="Notify">
+            <p class="notify" id ="negative-notify">❌ Pin Didn't Match, Please try again</p>
+            <p class="notify" id="positive-notify" onclick="submitBtn()">✅ Pin Matched... Secret door is opening for you</p>
+        </div>
+    </div>
+    <script>
+    
+        function pinGenerate(){
+            const pinInput = Math.random() * 10000 ;
+            const newPinInput = Math.round(pinInput);
+            document.getElementById("pinResult").value = newPinInput;
+
+            document.getElementById("pinResult").innerText = newPinInput;
+
+        }
+
+        const inputZero = document.getElementById("zero");
+         inputZero.addEventListener("click", function(){
+            
+               const numberValue = inputZero.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+
+         const inputOne = document.getElementById("one");
+         inputOne.addEventListener("click", function(){
+            
+               const numberValue = inputOne.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+
+         const inputTwo = document.getElementById("two");
+         inputTwo.addEventListener("click", function(){
+            
+               const numberValue = inputTwo.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+
+         const inputThree = document.getElementById("three");
+         inputThree.addEventListener("click", function(){
+            
+               const numberValue = inputThree.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+
+         const inputFour = document.getElementById("four");
+         inputFour.addEventListener("click", function(){
+            
+               const numberValue = inputFour.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+
+         const inputFive = document.getElementById("five");
+         inputFive.addEventListener("click", function(){
+            
+               const numberValue = inputFive.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+
+         const inputSix = document.getElementById("six");
+         inputSix.addEventListener("click", function(){
+            
+               const numberValue = inputSix.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+         
+
+         const inputSeven = document.getElementById("seven");
+         inputSeven.addEventListener("click", function(){
+            
+               const numberValue = inputSeven.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+
+         const inputEight = document.getElementById("eight");
+         inputEight.addEventListener("click", function(){
+            
+               const numberValue = inputEight.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+
+         const inputNine = document.getElementById("nine");
+         inputNine.addEventListener("click", function(){
+            
+               const numberValue = inputNine.innerText;
+               const newInput = parseInt(numberValue);
+               document.getElementById("inputNum").value += newInput;
+
+               document.getElementById("inputNum").innerText = inputNum;
+         })
+
+         const inputRemove = document.getElementById("remove");
+         inputRemove.addEventListener("click", function(){
+             document.getElementById("inputNum").value ="";
+         })
+
+         
+         const inputMinus = document.getElementById("minus");
+         inputMinus.addEventListener("click", function(){
+            
+              const minus = document.getElementById("inputNum").value;
+              const numRemove = minus.slice(0, -1);
+              document.getElementById("inputNum").value = numRemove;
+         })
+
+         //submit btn
+         function submitBtn(){
+             const generateInput = document.getElementById("pinResult").value;
+             const newGenerateInput =parseInt(generateInput);
+             const matchINput = document.getElementById("inputNum").value;
+             const newMatchInput = parseInt(matchINput);
+             if(newGenerateInput == newMatchInput){
+                document.getElementById("positive-notify").innerText;  
+
+             }
+             else{
+                document.getElementById("negative-notify").innerText;
+             }
+         }
+
+        
+
+
+    </script>
+</body>
+</html>
